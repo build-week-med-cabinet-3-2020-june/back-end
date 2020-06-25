@@ -12,4 +12,19 @@ router.get("/", restricted, (req,res) => {
     });
 });
 
+router.get("/:id", (req, res) => {
+    const { id } = req.params
+    Strains.findById()
+      .where({ id })
+      .first()
+      .then((strain) => {
+      res.json(strain)
+      })
+      .catch((err) => {
+      res.status(500).json({ message: "Failed GET strain by ID" }, err)
+      });
+});
+
+
+
 module.exports = router;

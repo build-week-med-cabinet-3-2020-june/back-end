@@ -1,31 +1,29 @@
 const db = require("../database/dbConfig");
 
 function find() {
-    return db("strainAPI");
+    return db("strains");
 }
 
-function findBy(filter) {
-    return db("strainAPI").where(filter).orderBy("id");
+function findby(filter) {
+    return db("strains").where(filter).orderBy("id");
   }
 
-// under contruction, need strain to save to saved table associated to a user.
-//   async function add(strain) {
-//     try {
-//       const [id] = await db("strainAPI").insert(strain, "id");
-  
-//       return findById(id);
-//     } catch (error) {
-//       throw error;
-//     }
-//   }
-  
+
 function findById(id) {
-    return db("strainAPI").where({ id }).first();
+    return db("strains").where({ id }).first();
   }
+
+function findByStrain(strain) {
+    return db("strains").where({ strain }).first();
+}
+
+ 
 
 module.exports = {
     find,
-    findBy,
-    add,
-    findById
+    findby,
+    findById,
+    findByStrain
 };
+
+
