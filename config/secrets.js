@@ -1,3 +1,3 @@
 module.exports = {
-    jwtSecret: process.env.JWT_SECRET || 'The limit does not exist',
+    jwtSecret: process.env.JWT_SECRET || 'tonights the night',
   };
