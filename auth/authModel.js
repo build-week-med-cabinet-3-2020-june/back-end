@@ -1,6 +1,5 @@
 const db = require('../database/dbConfig');
 
-//users is a placeholder name for the database
 
 module.exports = {
 	find,
