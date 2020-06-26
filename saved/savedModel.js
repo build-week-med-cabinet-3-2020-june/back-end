@@ -30,6 +30,5 @@ module.exports = {
     findBy,
     findById,
     findByUsername,
-    addStrain,
-    deleteStrain
+    addStrain
 };
