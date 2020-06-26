@@ -20,11 +20,16 @@ async function addStrain(strain) {
     return findByUsername(username);
 }
   
+function findById(id) {
+    return db("savedList").where({ id }).first();
+  }
 
 
 module.exports = {
     find,
     findBy,
+    findById,
     findByUsername,
     addStrain,
+    deleteStrain
 };
