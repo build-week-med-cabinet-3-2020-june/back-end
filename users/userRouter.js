@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
 });
 
 //find a user by id
-router.get("/:id", (req, res) => {
+router.get("/:id/", (req, res) => {
     const { id } = req.params
     db('medCabUsers')
       .where({ id })
@@ -28,18 +28,7 @@ router.get("/:id", (req, res) => {
 });
 
 
-router.get("/:username", (req, res) => {
-    const { username } = req.params
-    db('medCabUsers')
-      .where({ username })
-      .first()
-      .then((user) => {
-      res.json(user)
-      })
-      .catch((err) => {
-      res.status(500).json({ message: "Failed GET user by Username" }, err)
-      });
-});
+
 
 
 module.exports = router;

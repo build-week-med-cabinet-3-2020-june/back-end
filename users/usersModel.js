@@ -13,13 +13,14 @@ function findById(id) {
   return db("medCabUsers").where({ id }).first();
 }
 
-function findByUsername(username) {
-    return db("medCabUsers").where({ username }).first();
+function findSaved(username) {
+  return db("savedList").where({ username })
 }
+
 
 module.exports = {
     find,
     findBy,
     findById,
-    findByUsername
+    findSaved,
 };
